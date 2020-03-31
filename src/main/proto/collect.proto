@@ -1,0 +1,28 @@
+syntax = "proto3";
+//生成文件所在包名
+option java_package = "com.iotmars.entity";
+//生成的java文件名
+option java_outer_classname = "CollectModel";
+
+message protoStep {
+    int32 no = 1; // 步骤编号 1-5
+    int32 temp = 2; // 烹饪温度30-270
+    int32 time = 3; // 烹饪时长 1-300min
+    enum Mode {
+        MODE_STEAM = 0; // 蒸模式
+        MODE_BAKE = 1; // 烤模式
+    }
+    Mode mode = 4; // 烹饪模式0-蒸 1-烤
+    bool remind = 5; // 烹饪提醒 1-true 0-false
+}
+
+message protoInfo {
+    string pid = 1; // 菜谱id
+    string name = 2; // 菜谱名称
+    int32 weightDefault = 3; // 默认重量
+    string menuUrl = 4; // 菜谱图片url
+    string voiceUrl = 5; // 音频url
+    string deviceId = 6; // 设备id
+    string deviceType = 7; // 设备类型
+    repeated protoStep step = 8; // 烹饪步骤集合
+}
