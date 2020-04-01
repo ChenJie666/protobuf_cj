@@ -1180,6 +1180,12 @@ public final class Student {
       return true;
     }
 
+    /**
+     * 序列化的核心代码，通过output进行反序列化
+     *
+     * @param output
+     * @throws java.io.IOException
+     */
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0) {
